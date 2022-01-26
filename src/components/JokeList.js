@@ -2,7 +2,7 @@ import JokeDisplayCard from "./JokeDisplayCard";
 
 const JokeList = ({ jokes }) => {
   return(
-    <div>
+    <div className="jokeList">
       {jokes.map((joke, i)=>{
         return <JokeDisplayCard 
                 key={i} 
