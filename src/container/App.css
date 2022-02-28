@@ -1,15 +1,47 @@
 .App {
   text-align: center;
 }
-.jokeList{
+.jokeList {
   background-color: antiquewhite;
   display: flex;
   justify-content: center;
+  align-items: center;
   flex-direction: row;
   flex-wrap: wrap;
 }
-.jokeCard{
-  background-color: rgb(175, 228, 228);
-  margin: 10px;
-  width: fit-content;
+.jokeCard {
+  margin: 20px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border-radius: 0.25rem;
+  box-shadow: 0px 3px 18px 3px rgba(0, 0, 0, 0.3);
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(255, 81, 0),
+    rgb(255, 251, 0)
+  );
+  transform-style: preserve-3d;
+  height: 250px;
+  width: 500px;
+  transition: 800ms;
+  transform: perspective(800px) rotateY(var(--rotate-y, 0));
+  cursor: pointer;
+}
+
+.jokeCard.is-flipped {
+  --rotate-y: 180deg;
+}
+
+.jokeCard .card--front,
+.jokeCard .card--back {
+  position: absolute;
+  padding: 1rem;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.jokeCard .card--back {
+  transform: rotateY(180);
 }
